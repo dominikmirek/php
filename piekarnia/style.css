@@ -1,0 +1,12 @@
+body{
+    background-color: blanchedalmond;
+    text-align: center;
+}
+table{
+    margin: auto;
+}
+form,div{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
