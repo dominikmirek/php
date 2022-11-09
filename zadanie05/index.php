@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="style.css" ">
 </head>
 <body>
-
+<div class="intro">
 <h1>Dominik Mirek</h1>
 <h2>Zadanie 5</h2>
 <p>Napisz program, który oblicza i wyświetla iloraz 2 liczb rzeczywistych z dokładnością do dwóch miejsc po przecinku.</p>
-
+</div>
 <form method="POST" action="index.php">
     podaj a :   <input type="text" name="a">
     podaj b :   <input type="text" name="b"><br><br>

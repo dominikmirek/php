@@ -9,7 +9,13 @@ body{
 }
 
 form{
+    margin-top: 25px;
     padding: 10px;
     background: darkorchid;
+    border: black 3px solid;
+}
+.intro{
+    padding: 10px;
+    background: #46d46e;
     border: black 3px solid;
 }
