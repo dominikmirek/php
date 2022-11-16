@@ -12,8 +12,7 @@
 <div class="intro">
     <h1>Dominik Mirek</h1>
     <h2>Zadanie CDF</h2>
-    <p>Napisz program, który oblicza i wyświetla iloraz 2 liczb rzeczywistych z dokładnością do dwóch miejsc po przecinku.</p>
-</div>
+    </div>
 <form method="POST" action="wynik.php">
     podaj imie :   <input type="text" name="imie">
     podaj a :   <input type="text" name="a">
