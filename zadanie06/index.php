@@ -28,7 +28,10 @@
         $b = $_POST['b'];
         $c = $_POST['c'];
 
-        if($a+$b>$c && $a+$c>$b && $b+$c>$a) {
+        if(!is_numeric($a)||!is_numeric($b)||!is_numeric($a)){
+            echo "Nie można zbudować trójkąta z liter<br>";
+        }
+        else if($a+$b>$c && $a+$c>$b && $b+$c>$a) {
             $p = ($a + $b + $c) / 2;
             $s = sqrt($p * ($p - $a) * ($p - $b) * ($p - $c));
            echo "Pole trójkąta o bokach <br>";
