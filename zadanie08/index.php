@@ -11,41 +11,28 @@
 <body>
 <div class="intro">
     <h1>Dominik Mirek</h1>
-    <h2>Zadanie 6</h2>
-    <p>Napisz program, który oblicza pole trójkąta na podstawie długości jego boków za pomocą wzoru Herona</p>
+    <h2>Zadanie 8</h2>
+    <p>Napisz program, który przelicza czas podany w sekundach na zapis uwzględniający godziny, minuty oraz sekundy. Program zadziała dla s większego od 0.
+        Przykład: dla s = 4000 wynikiem powinien być ciąg znaków : 1g6m40s</p>
 </div>
 <form method="POST" action="index.php">
-    podaj a :   <input type="text" name="a">
-    podaj b :   <input type="text" name="b">
-    podaj c :   <input type="text" name="c">
+    podaj ilość sekund s =   <input type="text" name="s">
 
     <input type="submit" value="Wyślij">
 </form>
 <div class="wynik">
     <?php
-    if (isset($_POST['a'])) {
-        $a = $_POST['a'];
-        $b = $_POST['b'];
-        $c = $_POST['c'];
+    if (isset($_POST['s'])) {
+        $s = $_POST['s'];
 
-        if(!is_numeric($a)||!is_numeric($b)||!is_numeric($a)){
-            echo "Nie można zbudować trójkąta z liter<br>";
-        }
-        else if($a+$b>$c && $a+$c>$b && $b+$c>$a) {
-            $p = ($a + $b + $c) / 2;
-            $s = sqrt($p * ($p - $a) * ($p - $b) * ($p - $c));
-            echo "Pole trójkąta o bokach <br>";
-            echo "a = $a<br>";
-            echo "b = $b<br>";
-            echo "c = $c<br>";
-            echo "wynosi: $s<br>";
-        }
-        else {
-            echo "Nie można zbudować trójkąta o bokach<br>";
-            echo "a = $a<br>";
-            echo "b = $b<br>";
-            echo "c = $c<br>";
-        }
+
+        $g = floor($s/3600);
+        $s = $s%3600;
+        $m = floor($s/60);
+        $s = $s%60;
+
+        echo "$g g $m m $s s";
+
     }
 
     ?>

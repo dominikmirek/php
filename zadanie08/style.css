@@ -1,0 +1,21 @@
+body{
+    padding: 25px;
+}
+.wynik{
+    margin-top: 25px;
+    background: aqua;
+    padding: 10px;
+    border: black 3px solid;
+}
+
+form{
+    margin-top: 25px;
+    padding: 10px;
+    background: darkorchid;
+    border: black 3px solid;
+}
+.intro{
+    padding: 10px;
+    background: #46d46e;
+    border: black 3px solid;
+}

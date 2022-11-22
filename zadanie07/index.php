@@ -15,7 +15,7 @@
     <p>Napisz program, który dla podanej temperatury w stopniach Celsjusza zamienia ją na stopnie Kelwina i Fahrenheita.</p>
 </div>
 <form method="POST" action="index.php">
-    podaj  temperaturę w oC: :   <input type="text" name="temp">
+    podaj  temperaturę w oC:   <input type="text" name="temp">
     <input type="submit" value="Wyślij">
 </form>
 <div class="wynik">
