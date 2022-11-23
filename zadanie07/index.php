@@ -15,19 +15,29 @@
     <p>Napisz program, który dla podanej temperatury w stopniach Celsjusza zamienia ją na stopnie Kelwina i Fahrenheita.</p>
 </div>
 <form method="POST" action="index.php">
-    podaj  temperaturę w oC:   <input type="text" name="temp">
+    podaj  temperaturę w <sup>o</sup>C:   <input type="text" name="temp">
     <input type="submit" value="Wyślij">
 </form>
 <div class="wynik">
     <?php
     if (isset($_POST['temp'])) {
-        $tempC = $_POST['temp'];
-        $tempK = 273.15 + $tempC;
-        $tempF = ($tempC * 9 / 5) + 32;
 
-        echo "Wyniki obliczeń dla TCelsiusz = $tempC<br>";
-        echo "T Kelvin = $tempK<br>";
-        echo "T Fahrenheit= $tempF<br>";
+        $tempC = $_POST['temp'];
+
+        function tempzk($t){
+            return 273.15 + $t;
+        }
+
+        $tempK =tempzk($tempC);
+
+        function tempzf($t){
+            return ($t * 9 / 5) + 32;
+        }
+        $tempF = tempzf($tempC);
+
+        echo "Wyniki obliczeń dla <sub>T</sub>Celsiusz = $tempC<br>";
+        echo "<sub>T</sub>Kelvin = $tempK<br>";
+        echo "<sub>T</sub>Fahrenheit= $tempF<br>";
     }
     ?>
 
