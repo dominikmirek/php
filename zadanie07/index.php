@@ -20,7 +20,7 @@
 </form>
 <div class="wynik">
     <?php
-    if (isset($_POST['temp'])) {
+    if (isset($_POST['temp'])&& is_numeric($_POST['temp']) ) {
 
         $tempC = $_POST['temp'];
 
