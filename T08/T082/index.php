@@ -19,21 +19,24 @@
     </tr>
 </table>
 
-<h1>T081</h1>
+<h1>T082</h1>
 <p>Napisz funkcję, która dla podanej liczby zwraca (return) jej wartość bezwzględną i zastosuj tę funkcję do wyświetlenia wyniku. Do obliczenia wartości bezwzględnej użyj instrukcji warunkowej (wariant 1) i operatora warunkowego "?" (wariant 2).</p>
 <form method="POST" action="index.php">
-<input type="text" name="liczba"> <input type="submit" value="Wyślij">
+    <input type="text" name="a">  <input type="text" name="b"> <input type="submit" value="Wyślij">
+
 </form>
 <?php
 
-if (isset($_POST['liczba'])){
+if (isset($_POST['a']) && isset($_POST['b'])){
 
-    $liczba = $_POST['liczba'];
-    function bezwzgledna($liczba){
-        return  ($liczba>0)?$liczba:$liczba*-1;
+    $a = $_POST['a'];
+    $b = $_POST['b'];
+    function potega(&$liczbaa,&$liczbab){
+        $wykin = pow($liczbaa,$liczbab);
+        echo "x<sup>y</sup> = $liczbaa  <sup>$liczbab</sup> = $wykin";
+        return $wykin;
     }
-    $wynik = bezwzgledna($liczba);
-    echo "wartości bezwzględna : $wynik" ;
+    $wynik = potega($a,$b);
 
 
 }
@@ -41,3 +44,4 @@ if (isset($_POST['liczba'])){
 ?>
 </body>
 </html>
+
