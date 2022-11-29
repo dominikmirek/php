@@ -11,27 +11,29 @@
 <body>
 <div class="intro">
     <h1>Dominik Mirek</h1>
-    <h2>Zadanie 8</h2>
-    <p>Napisz program, który przelicza czas podany w sekundach na zapis uwzględniający godziny, minuty oraz sekundy. Program zadziała dla s większego od 0.
-        Przykład: dla s = 4000 wynikiem powinien być ciąg znaków : 1g6m40s</p>
+    <h2>Zadanie 9</h2>
+    <p>Napisz program, który zamienia długość podaną w calach na mm.
+        (1cal=25,3995 mm)</p>
 </div>
 <form method="POST" action="index.php">
-    podaj ilość sekund s =   <input type="text" name="s">
+    Długość w calach:   <input type="text" name="c">
 
     <input type="submit" value="Wyślij">
 </form>
 <div class="wynik">
     <?php
-    if (isset($_POST['s'])) {
-        $s = $_POST['s'];
+    if (isset($_POST['c'])) {
+        $c = $_POST['c'];
 
-
-        $g = floor($s/3600);
-        $s = $s%3600;
-        $m = floor($s/60);
-        $s = $s%60;
-
-        echo "$g g $m m $s s";
+        function wyswietl(&$mm,&$c){
+            echo "$c cali to $mm";
+        }
+        function przelicz_na_cale($c){
+            $mm = 25.3995 * $c;
+            wyswietl($mm,$c);
+        }
+        if(is_numeric(($_POST['c'])))
+            przelicz_na_cale($c);
 
     }
 
@@ -40,5 +42,4 @@
 
 </body>
 </html>
-
 

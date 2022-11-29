@@ -20,24 +20,31 @@
 </form>
 <div class="wynik">
     <?php
-    if (isset($_POST['temp'])&& is_numeric($_POST['temp']) ) {
+    if (isset($_POST['temp'])&& is_numeric($_POST['temp'])) {
 
         $tempC = $_POST['temp'];
+        if ($tempC<-273.15){
+            echo "Tak temperarura nie istnieje";
+        }else {
 
-        function tempzk($t){
-            return 273.15 + $t;
+            function tempzk($t)
+            {
+                return 273.15 + $t;
+            }
+
+            $tempK = tempzk($tempC);
+
+            function tempzf($t)
+            {
+                return ($t * 9 / 5) + 32;
+            }
+
+            $tempF = tempzf($tempC);
+
+            echo "Wyniki obliczeń dla <sub>T</sub>Celsiusz = $tempC<br>";
+            echo "<sub>T</sub>Kelvin = $tempK<br>";
+            echo "<sub>T</sub>Fahrenheit= $tempF<br>";
         }
-
-        $tempK =tempzk($tempC);
-
-        function tempzf($t){
-            return ($t * 9 / 5) + 32;
-        }
-        $tempF = tempzf($tempC);
-
-        echo "Wyniki obliczeń dla <sub>T</sub>Celsiusz = $tempC<br>";
-        echo "<sub>T</sub>Kelvin = $tempK<br>";
-        echo "<sub>T</sub>Fahrenheit= $tempF<br>";
     }
     ?>
 
