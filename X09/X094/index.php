@@ -25,22 +25,20 @@
 
     function datasprawsz($dd,$mm,$yy){
         if($dd<=31 && $mm<=12){
-            if(($mm == 4||$mm == 6||$mm == 9||$mm == 11)&&$dd>30){
+            if(!checkdate($mm,$dd,$yy)){
                 return"Błędna data";
             }
-            else if ($mm == 2 && $dd>29){
-                return"Błędna data";
-            }
-
             else{
                 if(date("y") > $yy){
                     return"historia";
                 }
                 else if(date("y")==$yy){
+
                     if (date("m") > $mm){
                         return"historia";
                     }
                     else if(date("m") ==$mm){
+
                         if (date("d") > $dd){
                             return"historia";
                         }
@@ -51,17 +49,13 @@
 
                 }
                 else return "teraźniejszość lub przyszłość";
-
             }
-
-
         }
-        else
-            return"Błędna data";
+        return "Błędna data";
     }
 
 
-    echo datasprawsz(22,05,2023);
+    echo datasprawsz(22,05,2021);
     ?>
 
 
