@@ -1,0 +1,16 @@
+
+body{
+    padding: 25px;
+}
+
+.intro{
+    padding: 10px;
+    background: #46d46e;
+    border: black 3px solid;
+}
+.wynik{
+    margin-top: 25px;
+    background: aqua;
+    padding: 10px;
+    border: black 3px solid;
+}
