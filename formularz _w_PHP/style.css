@@ -1,0 +1,17 @@
+body{
+    background: bisque;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #7d1a1a;
+    font-family: Arial;
+}
+.pad{
+    padding-left: 3em;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.fl{
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
