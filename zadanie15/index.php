@@ -17,13 +17,14 @@
 </div>
 <div class="b3">
     <form method="POST" action="index.php">
-        <section>
+        <select name="gatunek[]">
             <option>Sci-FI</option>
             <option>animacje</option>
             <option>dramat</option>
             <option>horror</option>
             <option>Komedia</option>
-        </section>
+        </select>
+
         <input type="button" value="Fimly">
     </form>
 </div>
