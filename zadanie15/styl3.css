@@ -58,5 +58,8 @@ p{
 a{
     color: yellow;
 }
+a:visited{
+    color: orange;
+}
 
 
