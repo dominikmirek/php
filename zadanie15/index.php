@@ -1,11 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['log'])) {
-    header('location: index.php');
-    exit();
-}
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,7 +10,7 @@ if (isset($_SESSION['log'])) {
 </head>
 <body>
 <div class="b1">
-    <img src="klaps1.png" alt="Nasze filmy">
+    <img src="klaps.png" alt="Nasze filmy">
 </div>
 <div class="b2">
     <h1>BAZA FIMLÓW</h1>
@@ -43,9 +35,11 @@ if (isset($_SESSION['log'])) {
         Wybrano filmy:
     </h2>
     <?php
-    $l=1;
+    $l=0;
     $gatunek = "";
-    foreach ($_POST['gatunek'] as $gatunek) {
+    if(isset($_POST['gatunek'])) {
+        foreach ($_POST['gatunek'] as $gatunek) {
+        }
     }
     switch ($gatunek){
         case "Sci-Fi":
@@ -64,15 +58,18 @@ if (isset($_SESSION['log'])) {
             $l=5;
             break;
     }
-$db = mysqli_connect('localhost','root','','3pir_dane');
-    mysqli_set_charset($db,'utf8');
-$q ="SELECT tytul,rok,ocena FROM `filmy` WHERE gatunki_id = $l;";
-$wynik = mysqli_query($db,$q);
-while ($el = mysqli_fetch_row($wynik)){
-    echo "Tytuł: ".$el[0].", Rok produkcji: ".$el[1].", Ocena: ".$el[2]."<br><br>";
-}
+    if ($l!=0) {
 
-mysqli_close($db);
+        $db = mysqli_connect('localhost', 'root', '', '3pir_dane');
+        mysqli_set_charset($db, 'utf8');
+        $q = "SELECT tytul,rok,ocena FROM `filmy` WHERE gatunki_id = $l;";
+        $wynik = mysqli_query($db, $q);
+        while ($el = mysqli_fetch_row($wynik)) {
+            echo "Tytuł: " . $el[0] . ", Rok produkcji: " . $el[1] . ", Ocena: " . $el[2] . "<br><br>";
+        }
+
+        mysqli_close($db);
+    }
     ?>
 </div>
 <div class="g2">
