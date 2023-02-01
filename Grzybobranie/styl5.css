@@ -1,0 +1,42 @@
+body{
+    font-family: Verdana;
+}
+.up1{
+    background-color: sienna;
+    width: 20%;
+    height: 100px;
+    float: left;
+}
+.up2{
+    background-color: sienna;
+    color: orange;
+    width: 80%;
+    height: 100px;
+    float: left;
+}
+.left{
+    background-color: burlywood;
+    width: 70%;
+    height: 700px;
+    float: left;
+}
+.right{
+    background-color: burlywood;
+    width: 30%;
+    height: 700px;
+    float: left;
+}
+.fotter{
+    background-color: sienna;
+    color: orange;
+    text-align: center;
+    float: end;
+}
+img{
+    margin: 7px;
+    padding: 5px;
+    border: 1px solid rosybrown;
+}
+img:hover{
+    border: 1px solid maroon;
+}
