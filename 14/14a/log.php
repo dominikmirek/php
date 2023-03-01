@@ -7,7 +7,7 @@ header('location: log.php');
 if ($_POST['nazwa'] == 'janek' && $_POST['haslo'] == 'jan23') {
 
 $_SESSION['log'] = $_POST['nazwa'];
-header('location: index.php');
+header('location: nowy.php');
 exit();
 } else {
 echo "Nieprawidłowe dane logowania<br>";

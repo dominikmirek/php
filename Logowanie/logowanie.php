@@ -8,7 +8,7 @@ else if(isset($_POST['nazwa']) && isset($_POST['haslo'])){
 
     if ($_POST['nazwa'] == 'dominik' && $_POST['haslo'] == 'admin'){
         $_SESSION['logowanie'] = $_POST['nazwa'];
-        header('location: index.php');
+        header('location: nowy.php');
         exit();
     }
     else{
