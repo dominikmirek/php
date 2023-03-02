@@ -30,26 +30,35 @@
 <div class="bs">
     <h3>Cena wybranego artykułu w promocji</h3>
     <form method="POST">
-        <select name="wyb[]">
-            <option >gumka do mazania</option>
-            <option >cienkopis</option>
-            <option >pisaki 60 szt.</option>
-            <option >markary 60 szt.</option>
+        <select name="option" >
+            <option name="gumka" >Gumka do mazania</option>
+            <option name="Cienkopis" >Cienkopis</option>
+            <option >Pisaki 60 szt.</option>
+            <option >Markery 4 szt.</option>
         </select>
         <input type="submit" value="WYBIERZ">
     </form>
     <?php
-    $object = '';
-    foreach ($_POST['wyb'] as $wartosc) {
-        $object =$wartosc;
+    $object="";
+    if(isset($_POST['option'])) {
+        $option = isset($_POST['option']);
+        switch ($option) {
+            case 'gumak':
+                echo "gumak";
+            case 'Cienkopis':
+                echo "Cienkopis";
+        }
     }
+
+
     $db=mysqli_connect("localhost","root","","3pir_2_sklep");
     $q="SELECT cena FROM towary WHERE nazwa='$object';";
     $wynik =mysqli_query($db,$q);
     while ($el=mysqli_fetch_row($wynik)){
         $pro = 0.85*$el[0];
-        round($pro,2);
+        $pro = round($pro,2);
         echo $pro;
+        echo $object;
     }
     ?>
 </div>
@@ -59,7 +68,7 @@
     <img src="promocja2.png" alt="promocja">
 </div>
 <div class="footer">
-    <h4>Autor strony: 00000000000</h4>
+    <h4>Autor strony: 00000000</h4>
 </div>
 </body>
 </html>
