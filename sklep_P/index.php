@@ -31,8 +31,8 @@
     <h3>Cena wybranego artykułu w promocji</h3>
     <form method="POST">
         <select name="option" >
-            <option name="gumka" >Gumka do mazania</option>
-            <option name="Cienkopis" >Cienkopis</option>
+            <option  >Gumka do mazania</option>
+            <option  >Cienkopis</option>
             <option >Pisaki 60 szt.</option>
             <option >Markery 4 szt.</option>
         </select>
@@ -41,13 +41,7 @@
     <?php
     $object="";
     if(isset($_POST['option'])) {
-        $option = isset($_POST['option']);
-        switch ($option) {
-            case 'gumak':
-                echo "gumak";
-            case 'Cienkopis':
-                echo "Cienkopis";
-        }
+        $object =$_POST['option'];
     }
 
 
@@ -58,7 +52,6 @@
         $pro = 0.85*$el[0];
         $pro = round($pro,2);
         echo $pro;
-        echo $object;
     }
     ?>
 </div>
