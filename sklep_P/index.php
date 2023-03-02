@@ -31,8 +31,8 @@
     <h3>Cena wybranego artykułu w promocji</h3>
     <form method="POST">
         <select name="option" >
-            <option  >Gumka do mazania</option>
-            <option  >Cienkopis</option>
+            <option >Gumka do mazania</option>
+            <option >Cienkopis</option>
             <option >Pisaki 60 szt.</option>
             <option >Markery 4 szt.</option>
         </select>
@@ -44,14 +44,13 @@
         $object =$_POST['option'];
     }
 
-
     $db=mysqli_connect("localhost","root","","3pir_2_sklep");
     $q="SELECT cena FROM towary WHERE nazwa='$object';";
     $wynik =mysqli_query($db,$q);
     while ($el=mysqli_fetch_row($wynik)){
         $pro = 0.85*$el[0];
         $pro = round($pro,2);
-        echo $pro;
+        echo $pro." zł";
     }
     ?>
 </div>
