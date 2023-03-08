@@ -7,9 +7,8 @@ body{
     background-color:#E8C84E ;
     width: 100%;
     font-size: 130%;
-    padding-top: 0;
+    height: 50px;
     text-align: center;
-    float: left;
 }
 .bl{
     background-color: #FFB544;

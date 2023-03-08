@@ -19,11 +19,11 @@
     mysqli_set_charset($db,"utf8");
     $q="SELECT nazwa FROM towary WHERE promocja=1;";
     $wynik = mysqli_query($db,$q);
+    echo "<ul>";
     while ($el = mysqli_fetch_row($wynik)){
-        echo "<ul>";
-        echo"<li>$el[0]</li>";
-        echo "</ul>";
+        echo"<br><li>$el[0]</li>";
     }
+    echo "</ul>";
     mysqli_close($db);
     ?>
 </div>
@@ -52,6 +52,7 @@
         $pro = round($pro,2);
         echo $pro." zł";
     }
+    mysqli_close($db);
     ?>
 </div>
 <div class="bp">
