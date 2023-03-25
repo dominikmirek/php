@@ -23,6 +23,48 @@ function oda($i){
             return 'e';
     }
 }
+function ilea($tab){
+    $suma= 0;
+    for($i=0;$i<7;$i++){
+        for($j=0;$j<7;$j++){
+            if($tab[$i][$j]=='a') {
+                $suma++;
+            }
+        }
+    }
+    echo "<br>a jest ".$suma." razy";
+}
+function wyswietl($tab){
+    echo "<table>";
+    for($i=0;$i<7;$i++){
+        echo"<tr>";
+        for($j=0;$j<7;$j++){
+            echo"<td>". $tab[$i][$j]."</td>>";
+        }
+        echo"</tr>";
+    }
+    echo "</table>";
+}
+function ileb($tab){
+    $b = 0;
+    $wynik = array(0,0,0,0,0,0,0);
+    for($i=0;$i<7;$i++){
+        for($j=0;$j<7;$j++){
+            if($tab[$i][$j]=='b')$b++;
+        }
+        $wynik[$i]=$b;
+        $b=0;
+    }
+    $wynik2 = $wynik;
+    sort($wynik2);
+    for($i=0;$i<7;$i++){
+       // echo $wynik[$i];
+        if($wynik[$i]==$wynik2[6]){
+          echo "w wierszu ".++$i." ";
+        }
+    }
+    echo"jest najwiecej b";
+}
 $tab = array(
     array('a','a','a','a','a','a','a'),
     array('a','a','a','a','a','a','a'),
@@ -37,24 +79,13 @@ for($i=0;$i<7;$i++){
         $tab[$i][$j] = oda(rand(0,4));
     }
 }
-echo "<table>";
-for($i=0;$i<7;$i++){
-    echo"<tr>";
-    for($j=0;$j<7;$j++){
-        echo"<td>". $tab[$i][$j]."</td>>";
-    }
-    echo"</tr>";
-}
-echo "</table>";
-$suma= 0;
-for($i=0;$i<7;$i++){
-    for($j=0;$j<7;$j++){
-        if($tab[$i][$j]=='a') {
-            $suma++;
-        }
-    }
-}
-echo "<br>a jest ".$suma." razy"
+
+wyswietl($tab);
+ilea($tab);
+echo "<br>";
+ileb($tab);
+
+
 ?>
 </body>
 </html>
