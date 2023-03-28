@@ -30,13 +30,24 @@ ilość słówa: <input type="text" name="il"><br>
     <input type="submit">
 </form>
 <?php
+function wyswietl($tab){
+    for
+}
+
 
 $tab = array('a','a','a','a','a','a','a','a','a','a');
 
 if(isset($_POST['l1'])&&isset($_POST['l2'])&&isset($_POST['l3'])&&isset($_POST['l4'])&&isset($_POST['l5'])&&isset($_POST['l6'])&&isset($_POST['l7'])&&isset($_POST['l8'])&&isset($_POST['l9'])&&isset($_POST['l10'])){
-    for($i = 0;$i<10;$i++){
-        $tab[$i] = $_POST['l'];
-    }
+    $tab[0] = $_POST['l1'];
+    $tab[1] = $_POST['l2'];
+    $tab[2] = $_POST['l3'];
+    $tab[3] = $_POST['l4'];
+    $tab[4] = $_POST['l5'];
+    $tab[5] = $_POST['l6'];
+    $tab[6] = $_POST['l7'];
+    $tab[7] = $_POST['l8'];
+    $tab[8] = $_POST['l9'];
+    $tab[9] = $_POST['l10'];
 }
 
 if(is_numeric(isset($_POST['dl']))&&is_numeric(isset($_POST['il']))){
