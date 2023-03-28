@@ -10,47 +10,49 @@
 <body>
 
 <form method="POST">
-    lireta 1  <input type="text" name="l1"><br>
-    lireta 2  <input type="text" name="l2"><br>
-    lireta 3  <input type="text" name="l3"><br>
-    lireta 4  <input type="text" name="l4"><br>
-    lireta 5  <input type="text" name="l5"><br>
-    lireta 6  <input type="text" name="l6"><br>
-    lireta 7  <input type="text" name="l7"><br>
-    lireta 8  <input type="text" name="l8"><br>
-    lireta 9  <input type="text" name="l9"><br>
-    lireta 10  <input type="text" name="l10"><br>
-    <input type="submit">
-</form>
+    podaj 10 liter <input type="text" name="al">
+
+
 <br><br>
 
-<form method="POST">
 długość losowego słowa: <input type="text" name="dl"><br>
 ilość słówa: <input type="text" name="il"><br>
     <input type="submit">
 </form>
 <?php
-function wyswietl($tab){
-    for
-}
-
-
 $tab = array('a','a','a','a','a','a','a','a','a','a');
-
-if(isset($_POST['l1'])&&isset($_POST['l2'])&&isset($_POST['l3'])&&isset($_POST['l4'])&&isset($_POST['l5'])&&isset($_POST['l6'])&&isset($_POST['l7'])&&isset($_POST['l8'])&&isset($_POST['l9'])&&isset($_POST['l10'])){
-    $tab[0] = $_POST['l1'];
-    $tab[1] = $_POST['l2'];
-    $tab[2] = $_POST['l3'];
-    $tab[3] = $_POST['l4'];
-    $tab[4] = $_POST['l5'];
-    $tab[5] = $_POST['l6'];
-    $tab[6] = $_POST['l7'];
-    $tab[7] = $_POST['l8'];
-    $tab[8] = $_POST['l9'];
-    $tab[9] = $_POST['l10'];
+function wyswietl($tab){
+    echo "Twoje litery to: ";
+    for($i=0;$i<9;$i++){
+        echo $tab[$i].", ";
+    }
+    echo $tab[9];
+}
+function wyswietl_slowa($tab){
+    $l = $_POST['dl'];
+    $words = $_POST['il'];
+    for($i=0;$i<$words;$i++){
+        for($j=0;$j<$l;$j++){
+            echo $tab[rand(0,9)];
+        }
+        echo " <br>";
+    }
 }
 
-if(is_numeric(isset($_POST['dl']))&&is_numeric(isset($_POST['il']))){
+if(isset($_POST['al'])) {
+    $al = $_POST['al'];
+    if (strlen($al) == 10)
+        for ($i = 0; $i < 10; $i++) {
+            $tab[$i] = $al[$i];
+        }
+}
+
+if(isset($_POST['dl'])&&isset($_POST['il'])){
+    if(is_numeric($_POST['dl'])&&is_numeric($_POST['il'])){
+        wyswietl($tab);
+        echo"<br> Słowa to :<br>";
+        wyswietl_slowa($tab);
+    }
 
 }
 
