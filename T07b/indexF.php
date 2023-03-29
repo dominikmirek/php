@@ -11,18 +11,6 @@ function wyswietl($tab){
     echo "</table>";
 }
 
-function copy_tab($tab){
-    $tab2 = array();
-    $p = 0;
-    for ($i = 0; $i < 7; $i++) {
-        for ($j = 0; $j < 7; $j++) {
-            $tab2[$p] = $tab[$i][$j];
-            $p++;
-        }
-    }
-    return $tab2;
-}
-
 $tab = array(
     array(0,0,0,0,0,0,0),
     array(0,0,0,0,0,0,0),
@@ -34,28 +22,19 @@ $tab = array(
 );
 for ($i = 0; $i < 7; $i++) {
     for ($j = 0; $j < 7; $j++) {
-        $tab[$i][$j] = rand(10, 99);
-    }
-}
-$test = true;
-while ($test) {
-    $test = false;
-    $tab2= copy_tab($tab);
-    sort($tab2);
-    for ($i = 0; $i < 47; $i++){
-        echo $tab2[$i]." ";
-    }
-    echo "<br>";
-    $p=0;
-    for ($i = 0; $i < 7; $i++) {
-        for ($j = 0; $j < 7; $j++) {
-            if($tab2[$p]==$tab2[$p+1]){
-                $tab[$i][$j]= rand(10,99);
+        $wylos = 0;
+        $test = true;
+        while ($test) {
+            $test = false;
+            $wylos = rand(10, 99);
+
+            if (in_array($wylos, $tab[0]) || in_array($wylos, $tab[1]) || in_array($wylos, $tab[2]) || in_array($wylos, $tab[3]) ||
+                in_array($wylos, $tab[4]) || in_array($wylos, $tab[5]) || in_array($wylos, $tab[6]))
                 $test = true;
-            }
-            $p++;
         }
+        $tab[$i][$j] = $wylos;
     }
 }
 wyswietl($tab);
+
 ?>
